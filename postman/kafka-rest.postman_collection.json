@@ -1,0 +1,476 @@
+{
+	"info": {
+		"_postman_id": "75b84663-c40b-4467-a600-7e0699a325de",
+		"name": "kafka-rest",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://{{hostname}}:8082/topics",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/vnd.kafka.binary.v2+json",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "Accept",
+						"value": "application/vnd.kafka.v2+json, application/vnd.kafka+json, application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://{{hostname}}:8082/topics",
+					"protocol": "http",
+					"host": [
+						"{{hostname}}"
+					],
+					"port": "8082",
+					"path": [
+						"topics"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://{{hostname}}:8082/topics/{{topic}}",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{hostname}}:8082/topics/jsonUserTopic",
+					"protocol": "http",
+					"host": [
+						"{{hostname}}"
+					],
+					"port": "8082",
+					"path": [
+						"topics",
+						"jsonUserTopic"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://{{hostname}}:8082/topics/jsonUserTopic/partitions",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{hostname}}:8082/topics/jsonUserTopic/partitions",
+					"protocol": "http",
+					"host": [
+						"{{hostname}}"
+					],
+					"port": "8082",
+					"path": [
+						"topics",
+						"jsonUserTopic",
+						"partitions"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://{{hostname}}:8082/topics/{{topic}} Binary",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/vnd.kafka.binary.v2+json",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/vnd.kafka.v2+json, application/vnd.kafka+json, application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "\n  {\n      \"records\": [\n    {\n      \"key\": \"a2V5\",\n      \"value\": \"Y29uZmx1ZW50\"\n    },\n    {\n      \"value\": \"a2Fma2E=\",\n      \"partition\": 1\n    },\n    {\n      \"value\": \"bG9ncw==\"\n    }\n  ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{hostname}}:8082/topics/jsonUserTopic",
+					"protocol": "http",
+					"host": [
+						"{{hostname}}"
+					],
+					"port": "8082",
+					"path": [
+						"topics",
+						"jsonUserTopic"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://{{hostname}}:8082/topics/{{topic}} Avro (Does not work)",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/vnd.kafka.avro.v2+json"
+					},
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/vnd.kafka.v2+json, application/vnd.kafka+json, application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "\n {\n  \"value_schema\": \"{\\\"name\\\":\\\"int\\\",\\\"type\\\": \\\"int\\\"}\",\n  \"records\": [\n    {\n      \"value\": 12\n    },\n    {\n      \"value\": 24,\n      \"partition\": 1\n    }\n  ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{hostname}}:8082/topics/newAvroTopic",
+					"protocol": "http",
+					"host": [
+						"{{hostname}}"
+					],
+					"port": "8082",
+					"path": [
+						"topics",
+						"newAvroTopic"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://{{hostname}}:8082/consumers/json-consumer-group",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/vnd.kafka.binary.v2+json"
+					},
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/vnd.kafka.v2+json, application/vnd.kafka+json, application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"name\": \"json_consumer_instance\",\n  \"format\": \"json\",\n  \"auto.offset.reset\": \"earliest\",\n  \"auto.commit.enable\": \"false\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{hostname}}:8082/consumers/json-consumer-group",
+					"protocol": "http",
+					"host": [
+						"{{hostname}}"
+					],
+					"port": "8082",
+					"path": [
+						"consumers",
+						"json-consumer-group"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://{{hostname}}:8082/consumers/json-consumer-group/instances/json_consumer_instance/offsets",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{hostname}}:8082/consumers/json-consumer-group/instances/json_consumer_instance/offsets",
+					"protocol": "http",
+					"host": [
+						"{{hostname}}"
+					],
+					"port": "8082",
+					"path": [
+						"consumers",
+						"json-consumer-group",
+						"instances",
+						"json_consumer_instance",
+						"offsets"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://{{hostname}}:8082/consumers/json-consumer-group/instances/json_consumer_instance/subscription",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/vnd.kafka.v2+json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"topics\": [\n    \"jsonUserTopic\"\n  ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{hostname}}:8082/consumers/json-consumer-group/instances/json_consumer_instance/subscription",
+					"protocol": "http",
+					"host": [
+						"{{hostname}}"
+					],
+					"port": "8082",
+					"path": [
+						"consumers",
+						"json-consumer-group",
+						"instances",
+						"json_consumer_instance",
+						"subscription"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://{{hostname}}:8082/consumers/json-consumer-group/instances/json_consumer_instance/subscription",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/vnd.kafka.v2+json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"topics\": [\n    \"jsonUserTopic\"\n  ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{hostname}}:8082/consumers/json-consumer-group/instances/json_consumer_instance/subscription",
+					"protocol": "http",
+					"host": [
+						"{{hostname}}"
+					],
+					"port": "8082",
+					"path": [
+						"consumers",
+						"json-consumer-group",
+						"instances",
+						"json_consumer_instance",
+						"subscription"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://{{hostname}}:8082/consumers/json-consumer-group/instances/json_consumer_instance/assignments",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/vnd.kafka.v2+json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"partitions\": [\n    {\n      \"topic\": \"jsonUserTopic\",\n      \"partition\": 0\n    },\n    {\n      \"topic\": \"jsonUserTopic\",\n      \"partition\": 1\n    }\n\n  ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{hostname}}:8082/consumers/json-consumer-group/instances/json_consumer_instance/assignments",
+					"protocol": "http",
+					"host": [
+						"{{hostname}}"
+					],
+					"port": "8082",
+					"path": [
+						"consumers",
+						"json-consumer-group",
+						"instances",
+						"json_consumer_instance",
+						"assignments"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://{{hostname}}:8082/consumers/json-consumer-group/instances/json_consumer_instance/assignments",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/vnd.kafka.v2+json",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/vnd.kafka.v2+json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{hostname}}:8082/consumers/json-consumer-group/instances/json_consumer_instance/assignments",
+					"protocol": "http",
+					"host": [
+						"{{hostname}}"
+					],
+					"port": "8082",
+					"path": [
+						"consumers",
+						"json-consumer-group",
+						"instances",
+						"json_consumer_instance",
+						"assignments"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://{{hostname}}:8082/consumers/json-consumer-group/instances/json_consumer_instance/positions/beginning",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/vnd.kafka.v2+json",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/vnd.kafka.json.v2+json",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"partitions\": [\n    {\n      \"topic\": \"jsonUserTopic\",\n      \"partition\": 0\n    },\n    {\n      \"topic\": \"jsonUserTopic\",\n      \"partition\": 1\n    }\n\n  ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{hostname}}:8082/consumers/json-consumer-group/instances/json_consumer_instance/positions/beginning",
+					"protocol": "http",
+					"host": [
+						"{{hostname}}"
+					],
+					"port": "8082",
+					"path": [
+						"consumers",
+						"json-consumer-group",
+						"instances",
+						"json_consumer_instance",
+						"positions",
+						"beginning"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://{{hostname}}:8082/consumers/json-consumer-group/instances/json_consumer_instance/records",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/vnd.kafka.v2+json",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/vnd.kafka.json.v2+json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"partitions\": [\n    {\n      \"topic\": \"jsonUserTopic\",\n      \"partition\": 0\n    },\n    {\n      \"topic\": \"jsonUserTopic\",\n      \"partition\": 1\n    }\n\n  ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{hostname}}:8082/consumers/json-consumer-group/instances/json_consumer_instance/records",
+					"protocol": "http",
+					"host": [
+						"{{hostname}}"
+					],
+					"port": "8082",
+					"path": [
+						"consumers",
+						"json-consumer-group",
+						"instances",
+						"json_consumer_instance",
+						"records"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

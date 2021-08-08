@@ -1,0 +1,36 @@
+logging:
+  level:
+    root: info
+app:
+  runtime-ms: 120000
+  messages-per-second: 20000
+  with-overhead: true    # generate new fake records (~ 100K recs/sec) - or just use the same one over and over - this is pure kafka without overhead (~ 400K recs/sec)
+  security: false
+  client_id: 2345
+  client_secret: xyz
+  token_url: urlishere
+
+topic:
+  partitions-num: 10
+  replication-factor: 1
+
+notification_status_topic:
+  name: notification_status
+  schema: /Users/clome1/Source/kafka/courseware/12-springsandbox/src/main/resources/schema/notification_status.json
+
+service_status_topic:
+  name: service_status
+  schema: /Users/clome1/Source/kafka/courseware/12-springsandbox/src/main/resources/schema/service_status.json
+
+server:
+  port: 9080
+spring:
+  kafka:
+    bootstrap-servers: http://ec2-3-15-47-201.us-east-2.compute.amazonaws.com:9092
+    properties:
+      schema.registry.url: http://ec2-3-15-47-201.us-east-2.compute.amazonaws.com:8081
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: io.confluent.kafka.serializers.KafkaAvroSerializer
+    template:
+      default-topic:

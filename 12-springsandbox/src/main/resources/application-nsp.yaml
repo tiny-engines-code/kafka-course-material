@@ -1,0 +1,36 @@
+app:
+  runtime-ms: 20000
+  messages-per-second: 20000  # throttle e.g. 20000 TPS - or 0 means no throttle
+  with-overhead: true    # generate new fake records (~ 100K recs/sec) - or just use the same one over and over - this is pure kafka without any overhead (~ 400K recs/sec)
+  security: true # always true for nsp
+  client_id: nike.niketech.cds-trial # from nsp source manage page
+  client_secret: ufHPSvzjBm_K_2zepunXrcF_brFaQZmjNgswhrkW9mwUhbEyOISIzSY0dwBjRQCR # from nsp source manage page
+  token_url: https://nike-qa.oktapreview.com/oauth2/ausa0mcornpZLi0C40h7/v1/token # from nsp source manage page
+
+topic:  # this auto create will not really work with nsp
+  partitions-num: 10
+  replication-factor: 1
+
+notification_status_topic:
+  name: v1-pdr-auw2-ems-1f9b6c66-a809-4808-8ee1-4562da5979a5-notification-status # created in nsp
+  schema: /Users/clome1/Source/kafka/courseware/12-springsandbox/src/main/resources/schema/notification_status.json # with nsp we have to maintain our own copy of schema - i'm getting from a json
+
+service_status_topic:
+  name: v1-pdr-auw2-ems-47ff0adf-9f67-4226-9821-50fd78aee4c3-service-status
+  schema: /Users/clome1/Source/kafka/courseware/12-springsandbox/src/main/resources/schema/service_status.json
+
+server:
+  port: 9080
+spring:
+  kafka:
+    bootstrap-servers: nke-nsp-qa-bro-gcl.us-west-2.qa.nsp.nike.com:9500  # from nsp source manage page
+    properties:
+      schema.registry.url: https://nsphttpsgcl.qa.nsp.nike.com  # from nsp source manage page
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: io.confluent.kafka.serializers.KafkaAvroSerializer
+    template:
+      default-topic:
+logging:
+  level:
+    root: info

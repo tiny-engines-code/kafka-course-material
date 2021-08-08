@@ -1,0 +1,24 @@
+{
+  "properties": [
+    {
+      "name": "application_id",
+      "type": "java.lang.String",
+      "description": "Description for application_id."
+    },
+    {
+      "name": "registry_url",
+      "type": "java.lang.String",
+      "description": "Description for registry_url."
+    },
+    {
+      "name": "page_size",
+      "type": "java.lang.String",
+      "description": "Description for page_size."
+    },
+    {
+      "name": "servers",
+      "type": "java.lang.String",
+      "description": "Description for servers."
+    }
+  ]
+}

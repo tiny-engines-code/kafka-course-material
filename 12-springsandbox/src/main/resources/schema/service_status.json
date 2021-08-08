@@ -1,0 +1,86 @@
+{
+  "type": "record",
+  "namespace": "com.chrislomeli.kafka.common.schema",
+  "name": "ServiceStatus",
+  "fields": [
+    {
+      "name": "send_id",
+      "type": "string",
+      "avro.java.string": "String",
+      "doc": "NGAP required unique id for this request, this user, and this channel (concat request_id + user_notification_id)"
+    },
+    {
+      "name": "start_time",
+      "type": {
+        "type": "long",
+        "logicalType": "timestamp-millis"
+      },
+      "doc": "UTC time in milliseconds when this service began processing this record"
+    },
+    {
+      "name": "end_time",
+      "type": {
+        "type": "long",
+        "logicalType": "timestamp-millis"
+      },
+      "doc": "The time in UTC millseconds when this service existed"
+    },
+    {
+      "name": "received_time",
+      "type": {
+        "type": "long",
+        "logicalType": "timestamp-millis"
+      },
+      "doc": "UTC time in milliseconds that this service received this request"
+    },
+    {
+      "name": "publish_time",
+      "type": {
+        "type": "long",
+        "logicalType": "timestamp-millis"
+      },
+      "doc": "UTC time in milliseconds that this service published its output"
+    },
+    {
+      "name": "app",
+      "type": "string",
+      "avro.java.string": "String",
+      "doc": "The service creating this record"
+    },
+    {
+      "name": "delivery_channel",
+      "type": "string",
+      "avro.java.string": "String",
+      "doc": "EMAIL,PUSH,SMS,INBOX"
+    },
+    {
+      "name": "notification_type",
+      "type": "string",
+      "avro.java.string": "String",
+      "doc": "NCP notification type"
+    },
+    {
+      "name": "record_type",
+      "type": "string",
+      "avro.java.string": "String",
+      "doc": "The lifecycle state this record is in"
+    },
+    {
+      "name": "status",
+      "type": "string",
+      "avro.java.string": "String",
+      "doc": "The status of this record"
+    },
+    {
+      "name": "step",
+      "type": "string",
+      "avro.java.string": "String",
+      "doc": "accept_request, gather_data, determine_target, render, transport"
+    },
+    {
+      "name": "time_taken",
+      "type": "long",
+      "doc": "The time in milliseconds that this record took to process within this application"
+    }
+  ]
+}

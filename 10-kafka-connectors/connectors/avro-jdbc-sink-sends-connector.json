@@ -1,0 +1,19 @@
+{
+  "name": "test-jdbc-sends-sink",
+  "config": {
+    "connector.class": "io.confluent.connect.jdbc.JdbcSinkConnector",
+    "connection.url": "jdbc:postgresql://localhost:5432/postgres",
+    "connection.user": "postgres",
+    "connection.password": "chinois1",
+    "table.name.format": "ngap_sends",
+    "auto.create": true,
+    "key.converter.schemas.enable": "false",
+    "key.converter": "org.apache.kafka.connect.storage.StringConverter",
+    "value.converter.schemas.enable": "true",
+    "value.converter.schema.registry.url": "http://localhost:8081",
+    "value.converter": "io.confluent.connect.avro.AvroConverter",
+    "tasks.max": "1",
+    "name": "test-jdbc-sends-sink",
+    "topics": "CDS_NGAP_SENDS"
+  }
+}

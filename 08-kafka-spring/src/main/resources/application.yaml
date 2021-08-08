@@ -1,0 +1,32 @@
+topic:
+  name: json_spring_user
+  partitions-num: 3
+  replication-factor: 1
+  client_id: <<nsp-client-id>>
+  client_secret: <<nsp-client-secret>>
+  token_url: <<nsp-token-url>>
+  security: false
+server:
+  port: 9080
+spring:
+  kafka:
+    bootstrap-servers: ec2-3-15-47-201.us-east-2.compute.amazonaws.com:9092
+    properties:
+      schema.registry.url: http://ec2-3-15-47-201.us-east-2.compute.amazonaws.com:8081
+    consumer:
+      group-id: group_id
+      auto-offset-reset: latest
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: io.confluent.kafka.serializers.KafkaAvroDeserializer
+      properties:
+        interceptor.classes: io.confluent.monitoring.clients.interceptor.MonitoringConsumerInterceptor
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: io.confluent.kafka.serializers.KafkaAvroSerializer
+#      properties:
+#        interceptor.classes: io.confluent.monitoring.clients.interceptor.MonitoringProducerInterceptor
+    template:
+      default-topic:
+logging:
+  level:
+    root: info

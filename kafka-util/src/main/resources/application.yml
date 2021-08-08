@@ -1,0 +1,8 @@
+kafka:
+  registry_url: http://localhost:8081
+  page_size: 25
+  servers:
+#    - b-1.public-msk-cluster.6ljatk.c2.kafka.us-west-2.amazonaws.com:9092
+#    - b-2.public-msk-cluster.6ljatk.c2.kafka.us-west-2.amazonaws.com:9092
+    - http://localhost:9092
+

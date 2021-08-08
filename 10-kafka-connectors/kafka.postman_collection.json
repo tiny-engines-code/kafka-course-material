@@ -1,0 +1,173 @@
+{
+	"info": {
+		"_postman_id": "7452aa0d-bb63-453c-9db6-2dac13bb22a3",
+		"name": "kafka",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Produce Notification Status",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"send_id\": \"006\",\n  \"start_time\": \"2020-06-27T10:47:21.388-07:00\",\n  \"end_time\": \"2020-06-27T10:47:21.397-07:00\",\n  \"received_time\": \"2020-06-27T10:47:21.397-07:00\",\n  \"publish_time\": \"2020-06-27T10:47:21.397-07:00\",\n  \"api_version\": \"2.0.0\",\n  \"app\": \"rendersvc\",\n  \"application\": \"transporter\",\n  \"appteam\": \"Notifications:CRS\",\n  \"awshost\": \"ip-10-8-236-57-us-east-1a\",\n  \"comm_id\": \"c0005\",\n  \"cp_code\": \"cds_v2_perf_c2762_ad1ce8de-da31-4d15-b4de-964b8eb0bbd1_load_automation\",\n  \"delivery_channel\": \"EMAIL\",\n  \"destination\": \"thedude@nike.com\",\n  \"environment\": \"perf\",\n  \"eventtype\": \"country_ONENIKE (ONENIKE)\",\n  \"locale_country\": \"US\",\n  \"locale_language\": \"en\",\n  \"metric\": 3,\n  \"notification_type\": \"generic:campaign\",\n  \"record_type\": \"terminal\",\n  \"request_id\": \"bb4454ae-fa72-426e-9244-cede1b3e53c2\",\n  \"short_name\": \"Notifications:CDS-perf-validatorsvc-\",\n  \"status\": \"success\",\n  \"message\": \"success\",\n  \"step\": \"deliver_notification\",\n  \"time_taken\": 3400,\n  \"tag\": \"ONENIKE\",\n  \"upmid\": \"91533240-799d-4243-9533-ae3e6ab32d72\",\n  \"user_notification_id\": \"f3c818e0-78c7-4e9f-9951-9f5372d05349\",\n  \"vendor\": \"SES\",\n  \"version\": \"v2\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{localhost}}:9080/nike/notification",
+					"host": [
+						"{{localhost}}"
+					],
+					"port": "9080",
+					"path": [
+						"nike",
+						"notification"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create s3 ngap connector",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"name\": \"test-s3-ngap-sink\",\n  \"config\": {\n    \"connector.class\": \"io.confluent.connect.s3.S3SinkConnector\",\n    \"aws.access.key.id\": \"**\",\n    \"aws.secret.access.key\": \"**\",\n    \"s3.bucket.name\": \"chris-test-data\",\n    \"s3.region\": \"us-west-2\",\n    \"topics-dir\": \"parquet-demo\",\n    \"s3.part.size\": \"5242880\",\n    \"flush.size\": \"3\",\n    \"rotate.schedule.interval.ms\": \"20000\",\n    \"auto.register.schemas\": \"false\",\n    \"timezone\": \"UTC\",\n    \"parquet.codec\": \"snappy\",\n    \"storage.class\": \"io.confluent.connect.s3.storage.S3Storage\",\n    \"format.class\": \"io.confluent.connect.s3.format.parquet.ParquetFormat\",\n    \"schema.generator.class\": \"io.confluent.connect.storage.hive.schema.DefaultSchemaGenerator\",\n    \"partitioner.class\": \"io.confluent.connect.storage.partitioner.DailyPartitioner\",\n    \"locale\": \"en-US\",\n    \"key.converter.schemas.enable\": \"false\",\n    \"key.converter\": \"org.apache.kafka.connect.storage.StringConverter\",\n    \"value.converter.schemas.enable\": \"true\",\n    \"value.converter.schema.registry.url\": \"http://localhost:8081\",\n    \"value.converter\": \"io.confluent.connect.avro.AvroConverter\",\n    \"tasks.max\": \"1\",\n    \"name\": \"test-s3-ngap-sink\",\n    \"topics\": \"CDS_NGAP_SENDS\"\n  }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{localhost}}:8083/connectors",
+					"host": [
+						"{{localhost}}"
+					],
+					"port": "8083",
+					"path": [
+						"connectors"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create s3 notification_status connector",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"name\": \"test-s3-notification-sink\",\n  \"config\": {\n    \"connector.class\": \"io.confluent.connect.s3.S3SinkConnector\",\n    \"aws.access.key.id\": \"AKIA26BBQRVXYALSPYDV\",\n    \"aws.secret.access.key\": \"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\",\n    \"s3.bucket.name\": \"chris-test-data\",\n    \"s3.region\": \"us-west-2\",\n    \"topics-dir\": \"parquet-demo\",\n    \"s3.part.size\": \"5242880\",\n    \"flush.size\": \"3\",\n    \"rotate.schedule.interval.ms\": \"20000\",\n    \"auto.register.schemas\": \"false\",\n    \"timezone\": \"UTC\",\n    \"parquet.codec\": \"snappy\",\n    \"storage.class\": \"io.confluent.connect.s3.storage.S3Storage\",\n    \"format.class\": \"io.confluent.connect.s3.format.parquet.ParquetFormat\",\n    \"schema.generator.class\": \"io.confluent.connect.storage.hive.schema.DefaultSchemaGenerator\",\n    \"partitioner.class\": \"io.confluent.connect.storage.partitioner.DailyPartitioner\",\n    \"locale\": \"en-US\",\n    \"key.converter.schemas.enable\": \"false\",\n    \"key.converter\": \"org.apache.kafka.connect.storage.StringConverter\",\n    \"value.converter.schemas.enable\": \"true\",\n    \"value.converter.schema.registry.url\": \"http://localhost:8081\",\n    \"value.converter\": \"io.confluent.connect.avro.AvroConverter\",\n    \"tasks.max\": \"1\",\n    \"name\": \"test-s3-notification-sink\",\n    \"topics\": \"notification_status\"\n  }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{localhost}}:8083/connectors",
+					"host": [
+						"{{localhost}}"
+					],
+					"port": "8083",
+					"path": [
+						"connectors"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create s3 connector to ngap sends record Copy",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"name\": \"test-s3-ngap-sink\",\n  \"config\": {\n    \"connector.class\": \"io.confluent.connect.s3.S3SinkConnector\",\n    \"aws.access.key.id\": \"AKIA26BBQRVXYALSPYDV\",\n    \"aws.secret.access.key\": \"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\",\n    \"s3.bucket.name\": \"chris-test-data\",\n    \"s3.region\": \"us-west-2\",\n    \"topics-dir\": \"parquet-demo\",\n    \"s3.part.size\": \"5242880\",\n    \"flush.size\": \"3\",\n    \"rotate.schedule.interval.ms\": \"20000\",\n    \"auto.register.schemas\": \"false\",\n    \"timezone\": \"UTC\",\n    \"parquet.codec\": \"snappy\",\n    \"storage.class\": \"io.confluent.connect.s3.storage.S3Storage\",\n    \"format.class\": \"io.confluent.connect.s3.format.parquet.ParquetFormat\",\n    \"schema.generator.class\": \"io.confluent.connect.storage.hive.schema.DefaultSchemaGenerator\",\n    \"partitioner.class\": \"io.confluent.connect.storage.partitioner.DailyPartitioner\",\n    \"locale\": \"en-US\",\n    \"key.converter.schemas.enable\": \"false\",\n    \"key.converter\": \"org.apache.kafka.connect.storage.StringConverter\",\n    \"value.converter.schemas.enable\": \"true\",\n    \"value.converter.schema.registry.url\": \"http://localhost:8081\",\n    \"value.converter\": \"io.confluent.connect.avro.AvroConverter\",\n    \"tasks.max\": \"1\",\n    \"name\": \"test-s3-ngap-sink\",\n    \"topics\": \"cds_terminal_sends\"\n  }\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{localhost}}:8083/connectors",
+					"host": [
+						"{{localhost}}"
+					],
+					"port": "8083",
+					"path": [
+						"connectors"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create postgres notification_status connector",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"name\": \"test-jdbc-notification-sink\",\n  \"config\": {\n    \"connector.class\": \"io.confluent.connect.jdbc.JdbcSinkConnector\",\n    \"connection.url\": \"jdbc:postgresql://localhost:5432/postgres\",\n    \"connection.user\": \"postgres\",\n    \"connection.password\": \"chinois1\",\n    \"table.name.format\": \"kafka_${topic}\",\n    \"auto.create\": true,\n    \"key.converter.schemas.enable\": \"false\",\n    \"key.converter\": \"org.apache.kafka.connect.storage.StringConverter\",\n    \"value.converter.schemas.enable\": \"true\",\n    \"value.converter\": \"io.confluent.connect.avro.AvroConverter\",\n    \"value.converter.schema.registry.url\": \"http://localhost:8081\",\n    \"tasks.max\": \"1\",\n    \"name\": \"test-jdbc-notification-sink\",\n    \"topics\": \"notification_status\"\n  }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{localhost}}:8083/connectors",
+					"host": [
+						"{{localhost}}"
+					],
+					"port": "8083",
+					"path": [
+						"connectors"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create postgres sends connector",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"name\": \"test-jdbc-sends-sink\",\n  \"config\": {\n    \"connector.class\": \"io.confluent.connect.jdbc.JdbcSinkConnector\",\n    \"connection.url\": \"jdbc:postgresql://localhost:5432/postgres\",\n    \"connection.user\": \"postgres\",\n    \"connection.password\": \"chinois1\",\n    \"table.name.format\": \"ngap_sends\",\n    \"auto.create\": true,\n    \"key.converter.schemas.enable\": \"false\",\n    \"key.converter\": \"org.apache.kafka.connect.storage.StringConverter\",\n    \"value.converter.schemas.enable\": \"true\",\n    \"value.converter.schema.registry.url\": \"http://localhost:8081\",\n    \"value.converter\": \"io.confluent.connect.avro.AvroConverter\",\n    \"tasks.max\": \"1\",\n    \"name\": \"test-jdbc-sends-sink\",\n    \"topics\": \"CDS_NGAP_SENDS\"\n  }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{localhost}}:8083/connectors",
+					"host": [
+						"{{localhost}}"
+					],
+					"port": "8083",
+					"path": [
+						"connectors"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

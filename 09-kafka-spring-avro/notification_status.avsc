@@ -1,0 +1,205 @@
+{
+  "type": "record",
+  "namespace": "com.chrislomeli.kafka.common.schema",
+  "name": "NotificationStatus",
+  "fields": [
+    {
+      "name": "send_id",
+      "type": "string",
+      "avro.java.string": "String",
+      "doc": "NGAP required unique id for this request, this user, and this channel (concat request_id + user_notification_id)"
+    },
+    {
+      "name": "start_time",
+      "type": {
+        "type": "long",
+        "logicalType": "timestamp-millis"
+      },
+      "doc": "UTC time in milliseconds when this service began processing this record"
+    },
+    {
+      "name": "end_time",
+      "type": {
+        "type": "long",
+        "logicalType": "timestamp-millis"
+      },
+      "doc": "The time in UTC millseconds when this service existed"
+    },
+    {
+      "name": "received_time",
+      "type": {
+        "type": "long",
+        "logicalType": "timestamp-millis"
+      },
+      "doc": "UTC time in milliseconds that this service received this request"
+    },
+    {
+      "name": "publish_time",
+      "type": {
+        "type": "long",
+        "logicalType": "timestamp-millis"
+      },
+      "doc": "UTC time in milliseconds that this service published its output"
+    },
+    {
+      "name": "api_version",
+      "type": "string",
+      "avro.java.string": "String",
+      "doc": "CDS API version number"
+    },
+    {
+      "name": "app",
+      "type": "string",
+      "avro.java.string": "String",
+      "doc": "The service creating this record"
+    },
+    {
+      "name": "application",
+      "type": "string",
+      "avro.java.string": "String",
+      "doc": "The service creating this record"
+    },
+    {
+      "name": "appteam",
+      "type": "string",
+      "avro.java.string": "String",
+      "doc": "The NCP team - always Notifications:CDS"
+    },
+    {
+      "name": "awshost",
+      "type": "string",
+      "avro.java.string": "String",
+      "doc": "The host where the service was running"
+    },
+    {
+      "name": "comm_id",
+      "type": "string",
+      "avro.java.string": "String",
+      "doc": "NCP com_id"
+    },
+    {
+      "name": "cp_code",
+      "type": "string",
+      "avro.java.string": "String",
+      "doc": "NCP cp_code"
+    },
+    {
+      "name": "delivery_channel",
+      "type": "string",
+      "avro.java.string": "String",
+      "doc": "EMAIL,PUSH,SMS,INBOX"
+    },
+    {
+      "name": "destination",
+      "type": "string",
+      "avro.java.string": "String",
+      "doc": "NGAP required destination is null before transporter and the phone or email or wechatid - depending on the channel"
+    },
+    {
+      "name": "environment",
+      "type": "string",
+      "avro.java.string": "String",
+      "doc": "The environment .e.g perf, prod, etc"
+    },
+    {
+      "name": "eventtype",
+      "type": "string",
+      "avro.java.string": "String",
+      "doc": "Descriptive event class"
+    },
+    {
+      "name": "locale_country",
+      "type": "string",
+      "avro.java.string": "String",
+      "doc": "Locale e.g. US, UK..."
+    },
+    {
+      "name": "locale_language",
+      "type": "string",
+      "avro.java.string": "String",
+      "doc": "Language e.g. en, fr, ja..."
+    },
+    {
+      "name": "metric",
+      "type": "int",
+      "doc": "TBD"
+    },
+    {
+      "name": "notification_type",
+      "type": "string",
+      "avro.java.string": "String",
+      "doc": "NCP notification type"
+    },
+    {
+      "name": "record_type",
+      "type": "string",
+      "avro.java.string": "String",
+      "doc": "The lifecycle state this record is in"
+    },
+    {
+      "name": "request_id",
+      "type": "string",
+      "avro.java.string": "String",
+      "doc": "NCP request Id"
+    },
+    {
+      "name": "short_name",
+      "type": "string",
+      "avro.java.string": "String",
+      "doc": "App team and service name string"
+    },
+    {
+      "name": "status",
+      "type": "string",
+      "avro.java.string": "String",
+      "doc": "The status of this record"
+    },
+    {
+      "name": "message",
+      "type": "string",
+      "avro.java.string": "String",
+      "doc": "NGAP required failure reason, but should just call it message in case it gets used for non failures in future"
+    },
+    {
+      "name": "step",
+      "type": "string",
+      "avro.java.string": "String",
+      "doc": "accept_request, gather_data, determine_target, render, transport"
+    },
+    {
+      "name": "time_taken",
+      "type": "long",
+      "doc": "The time in milliseconds that this record took to process within this application"
+    },
+    {
+      "name": "tag",
+      "type": "string",
+      "avro.java.string": "String",
+      "doc": ""
+    },
+    {
+      "name": "upmid",
+      "type": "string",
+      "avro.java.string": "String",
+      "doc": "NCP user identifier"
+    },
+    {
+      "name": "user_notification_id",
+      "type": "string",
+      "avro.java.string": "String",
+      "doc": "NCP user notification identity"
+    },
+    {
+      "name": "vendor",
+      "type": "string",
+      "avro.java.string": "String",
+      "doc": "NGAP required vendor that this notification is directed to - this is null before determine_target"
+    },
+    {
+      "name": "version",
+      "type": "string",
+      "avro.java.string": "String",
+      "doc": "CDS version number .e.g. v2"
+    }
+  ]
+}

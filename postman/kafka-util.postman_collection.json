@@ -1,0 +1,979 @@
+{
+	"info": {
+		"_postman_id": "616929d3-a2fc-4deb-8901-d1efe8dd8e4f",
+		"name": "kafka-util",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://localhost:8080/cluster",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "apikey",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "apiSecret",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{hostname}}:8080/cluster",
+					"protocol": "http",
+					"host": [
+						"{{hostname}}"
+					],
+					"port": "8080",
+					"path": [
+						"cluster"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/brokers",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "apikey",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "apiSecret",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{hostname}}:8080/brokers",
+					"protocol": "http",
+					"host": [
+						"{{hostname}}"
+					],
+					"port": "8080",
+					"path": [
+						"brokers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/registryUrl",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "apikey",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "apiSecret",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{hostname}}:8080/registryUrl",
+					"protocol": "http",
+					"host": [
+						"{{hostname}}"
+					],
+					"port": "8080",
+					"path": [
+						"registryUrl"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/topic",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "apikey",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "apiSecret",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{hostname}}:8080/topic",
+					"protocol": "http",
+					"host": [
+						"{{hostname}}"
+					],
+					"port": "8080",
+					"path": [
+						"topic"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/topic/{topic}",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "apikey",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "apiSecret",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{hostname}}:8080/topic/string_topic",
+					"protocol": "http",
+					"host": [
+						"{{hostname}}"
+					],
+					"port": "8080",
+					"path": [
+						"topic",
+						"string_topic"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/topic",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "apikey",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "apiSecret",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"topic\": \"messages\",\n    \"partitions\": 1,\n    \"replicas\" : 1\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{hostname}}:8080/topic",
+					"protocol": "http",
+					"host": [
+						"{{hostname}}"
+					],
+					"port": "8080",
+					"path": [
+						"topic"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/topic/{topic}",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "apikey",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "apiSecret",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{hostname}}:8080/topic/cheese",
+					"protocol": "http",
+					"host": [
+						"{{hostname}}"
+					],
+					"port": "8080",
+					"path": [
+						"topic",
+						"cheese"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://{{hostname}}:8080/topic/{topic}/record",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "apikey",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "apiSecret",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"user_name\": \"John Doe\",\n  \"address\": \"125 NE Ferry Way\",\n  \"age\": 37,\n  \"birth_date\": 1598972349470\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{hostname}}:8080/topic/myschema/record",
+					"protocol": "http",
+					"host": [
+						"{{hostname}}"
+					],
+					"port": "8080",
+					"path": [
+						"topic",
+						"myschema",
+						"record"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://{{hostname}}:8080/topic/{topic}/strings",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "apikey",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "apiSecret",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\n    \"this is a line of text\", \n    \"{\\\"type\\\": \\\"json\\\", \\\"value\\\": \\\"this is a line of json\\\"}\",\n    \"{\\\"type\\\": \\\"json\\\", \\\"value\\\": \\\"this is another line of json\\\"}\",\n    \"{\\\"type\\\": \\\"json\\\", \\\"value\\\": \\\"this is a final line of json\\\"}\"      \n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{hostname}}:8080/topic/messages/strings",
+					"protocol": "http",
+					"host": [
+						"{{hostname}}"
+					],
+					"port": "8080",
+					"path": [
+						"topic",
+						"messages",
+						"strings"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://{{hostname}}:8080/topic/{topic}/records/0/0",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "apikey",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "apiSecret",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"type\": \"record\",\n  \"namespace\": \"com.chrislomeli.kafka.common.schema\",\n  \"name\": \"TestCheese\",\n  \"fields\": [\n    {\n      \"name\": \"send_id\",\n      \"type\": \"string\",\n      \"avro.java.string\": \"String\",\n      \"doc\": \"NGAP required unique id for this request, this user, and this channel (concat request_id + user_notification_id)\"\n    },\n    {\n      \"name\": \"start_time\",\n      \"type\": {\n        \"type\": \"long\",\n        \"logicalType\": \"timestamp-millis\"\n      },\n      \"doc\": \"UTC time in milliseconds when this service began processing this record\"\n    },\n    {\n      \"name\": \"end_time\",\n      \"type\": {\n        \"type\": \"long\",\n        \"logicalType\": \"timestamp-millis\"\n      },\n      \"doc\": \"The time in UTC millseconds when this service existed\"\n    },\n    {\n      \"name\": \"received_time\",\n      \"type\": {\n        \"type\": \"long\",\n        \"logicalType\": \"timestamp-millis\"\n      },\n      \"doc\": \"UTC time in milliseconds that this service received this request\"\n    },\n    {\n      \"name\": \"publish_time\",\n      \"type\": {\n        \"type\": \"long\",\n        \"logicalType\": \"timestamp-millis\"\n      },\n      \"doc\": \"UTC time in milliseconds that this service published its output\"\n    },\n    {\n      \"name\": \"api_version\",\n      \"type\": \"string\",\n      \"avro.java.string\": \"String\",\n      \"doc\": \"CDS API version number\"\n    },\n    {\n      \"name\": \"app\",\n      \"type\": \"string\",\n      \"avro.java.string\": \"String\",\n      \"doc\": \"The service creating this record\"\n    },\n    {\n      \"name\": \"application\",\n      \"type\": \"string\",\n      \"avro.java.string\": \"String\",\n      \"doc\": \"The service creating this record\"\n    },\n    {\n      \"name\": \"appteam\",\n      \"type\": \"string\",\n      \"avro.java.string\": \"String\",\n      \"doc\": \"The NCP team - always Notifications:CDS\"\n    },\n    {\n      \"name\": \"awshost\",\n      \"type\": \"string\",\n      \"avro.java.string\": \"String\",\n      \"doc\": \"The host where the service was running\"\n    },\n    {\n      \"name\": \"comm_id\",\n      \"type\": \"string\",\n      \"avro.java.string\": \"String\",\n      \"doc\": \"NCP com_id\"\n    },\n    {\n      \"name\": \"cp_code\",\n      \"type\": \"string\",\n      \"avro.java.string\": \"String\",\n      \"doc\": \"NCP cp_code\"\n    },\n    {\n      \"name\": \"delivery_channel\",\n      \"type\": \"string\",\n      \"avro.java.string\": \"String\",\n      \"doc\": \"EMAIL,PUSH,SMS,INBOX\"\n    },\n    {\n      \"name\": \"destination\",\n      \"type\": \"string\",\n      \"avro.java.string\": \"String\",\n      \"doc\": \"NGAP required destination is null before transporter and the phone or email or wechatid - depending on the channel\"\n    },\n    {\n      \"name\": \"environment\",\n      \"type\": \"string\",\n      \"avro.java.string\": \"String\",\n      \"doc\": \"The environment .e.g perf, prod, etc\"\n    },\n    {\n      \"name\": \"eventtype\",\n      \"type\": \"string\",\n      \"avro.java.string\": \"String\",\n      \"doc\": \"Descriptive event class\"\n    },\n    {\n      \"name\": \"locale_country\",\n      \"type\": \"string\",\n      \"avro.java.string\": \"String\",\n      \"doc\": \"Locale e.g. US, UK...\"\n    },\n    {\n      \"name\": \"locale_language\",\n      \"type\": \"string\",\n      \"avro.java.string\": \"String\",\n      \"doc\": \"Language e.g. en, fr, ja...\"\n    },\n    {\n      \"name\": \"metric\",\n      \"type\": \"int\",\n      \"doc\": \"TBD\"\n    },\n    {\n      \"name\": \"notification_type\",\n      \"type\": \"string\",\n      \"avro.java.string\": \"String\",\n      \"doc\": \"NCP notification type\"\n    },\n    {\n      \"name\": \"record_type\",\n      \"type\": {\n        \"name\": \"NOTIFICATION_STATE_TYPE\",\n        \"type\": \"enum\",\n        \"symbols\": [\n          \"processing\",\n          \"terminal\"\n        ]\n      },\n      \"doc\": \"The lifecycle state this record is in\"\n    },\n    {\n      \"name\": \"request_id\",\n      \"type\": \"string\",\n      \"avro.java.string\": \"String\",\n      \"doc\": \"NCP request Id\"\n    },\n    {\n      \"name\": \"short_name\",\n      \"type\": \"string\",\n      \"avro.java.string\": \"String\",\n      \"doc\": \"App team and service name string\"\n    },\n    {\n      \"name\": \"status\",\n      \"type\": {\n        \"name\": \"NOTIFICATION_STATUS_TYPE\",\n        \"type\": \"enum\",\n        \"symbols\": [\n          \"success\",\n          \"failure\"\n        ]\n      },\n      \"doc\": \"The status of this record\"\n    },\n    {\n      \"name\": \"message\",\n      \"type\": \"string\",\n      \"avro.java.string\": \"String\",\n      \"doc\": \"NGAP required failure reason, but should just call it message in case it gets used for non failures in future\"\n    },\n    {\n      \"name\": \"step\",\n      \"type\": \"string\",\n      \"avro.java.string\": \"String\",\n      \"doc\": \"accept_request, gather_data, determine_target, render, transport\"\n    },\n    {\n      \"name\": \"time_taken\",\n      \"type\": \"long\",\n      \"doc\": \"The time in milliseconds that this record took to process within this application\"\n    },\n    {\n      \"name\": \"tag\",\n      \"type\": \"string\",\n      \"avro.java.string\": \"String\",\n      \"doc\": \"\"\n    },\n    {\n      \"name\": \"upmid\",\n      \"type\": \"string\",\n      \"avro.java.string\": \"String\",\n      \"doc\": \"NCP user identifier\"\n    },\n    {\n      \"name\": \"user_notification_id\",\n      \"type\": \"string\",\n      \"avro.java.string\": \"String\",\n      \"doc\": \"NCP user notification identity\"\n    },\n    {\n      \"name\": \"vendor\",\n      \"type\": \"string\",\n      \"avro.java.string\": \"String\",\n      \"doc\": \"NGAP required vendor that this notification is directed to - this is null before determine_target\"\n    },\n    {\n      \"name\": \"version\",\n      \"type\": \"string\",\n      \"avro.java.string\": \"String\",\n      \"doc\": \"CDS version number .e.g. v2\"\n    }\n  ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{hostname}}:8080/topic/myschema/records/0/0",
+					"protocol": "http",
+					"host": [
+						"{{hostname}}"
+					],
+					"port": "8080",
+					"path": [
+						"topic",
+						"myschema",
+						"records",
+						"0",
+						"0"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/subject",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "apikey",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "apiSecret",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"type\": \"record\",\n  \"namespace\": \"com.chrislomeli.kafka.common.schema\",\n  \"name\": \"TestCheese\",\n  \"fields\": [\n    {\n      \"name\": \"send_id\",\n      \"type\": \"string\",\n      \"avro.java.string\": \"String\",\n      \"doc\": \"NGAP required unique id for this request, this user, and this channel (concat request_id + user_notification_id)\"\n    },\n    {\n      \"name\": \"start_time\",\n      \"type\": {\n        \"type\": \"long\",\n        \"logicalType\": \"timestamp-millis\"\n      },\n      \"doc\": \"UTC time in milliseconds when this service began processing this record\"\n    },\n    {\n      \"name\": \"end_time\",\n      \"type\": {\n        \"type\": \"long\",\n        \"logicalType\": \"timestamp-millis\"\n      },\n      \"doc\": \"The time in UTC millseconds when this service existed\"\n    },\n    {\n      \"name\": \"received_time\",\n      \"type\": {\n        \"type\": \"long\",\n        \"logicalType\": \"timestamp-millis\"\n      },\n      \"doc\": \"UTC time in milliseconds that this service received this request\"\n    },\n    {\n      \"name\": \"publish_time\",\n      \"type\": {\n        \"type\": \"long\",\n        \"logicalType\": \"timestamp-millis\"\n      },\n      \"doc\": \"UTC time in milliseconds that this service published its output\"\n    },\n    {\n      \"name\": \"api_version\",\n      \"type\": \"string\",\n      \"avro.java.string\": \"String\",\n      \"doc\": \"CDS API version number\"\n    },\n    {\n      \"name\": \"app\",\n      \"type\": \"string\",\n      \"avro.java.string\": \"String\",\n      \"doc\": \"The service creating this record\"\n    },\n    {\n      \"name\": \"application\",\n      \"type\": \"string\",\n      \"avro.java.string\": \"String\",\n      \"doc\": \"The service creating this record\"\n    },\n    {\n      \"name\": \"appteam\",\n      \"type\": \"string\",\n      \"avro.java.string\": \"String\",\n      \"doc\": \"The NCP team - always Notifications:CDS\"\n    },\n    {\n      \"name\": \"awshost\",\n      \"type\": \"string\",\n      \"avro.java.string\": \"String\",\n      \"doc\": \"The host where the service was running\"\n    },\n    {\n      \"name\": \"comm_id\",\n      \"type\": \"string\",\n      \"avro.java.string\": \"String\",\n      \"doc\": \"NCP com_id\"\n    },\n    {\n      \"name\": \"cp_code\",\n      \"type\": \"string\",\n      \"avro.java.string\": \"String\",\n      \"doc\": \"NCP cp_code\"\n    },\n    {\n      \"name\": \"delivery_channel\",\n      \"type\": \"string\",\n      \"avro.java.string\": \"String\",\n      \"doc\": \"EMAIL,PUSH,SMS,INBOX\"\n    },\n    {\n      \"name\": \"destination\",\n      \"type\": \"string\",\n      \"avro.java.string\": \"String\",\n      \"doc\": \"NGAP required destination is null before transporter and the phone or email or wechatid - depending on the channel\"\n    },\n    {\n      \"name\": \"environment\",\n      \"type\": \"string\",\n      \"avro.java.string\": \"String\",\n      \"doc\": \"The environment .e.g perf, prod, etc\"\n    },\n    {\n      \"name\": \"eventtype\",\n      \"type\": \"string\",\n      \"avro.java.string\": \"String\",\n      \"doc\": \"Descriptive event class\"\n    },\n    {\n      \"name\": \"locale_country\",\n      \"type\": \"string\",\n      \"avro.java.string\": \"String\",\n      \"doc\": \"Locale e.g. US, UK...\"\n    },\n    {\n      \"name\": \"locale_language\",\n      \"type\": \"string\",\n      \"avro.java.string\": \"String\",\n      \"doc\": \"Language e.g. en, fr, ja...\"\n    },\n    {\n      \"name\": \"metric\",\n      \"type\": \"int\",\n      \"doc\": \"TBD\"\n    },\n    {\n      \"name\": \"notification_type\",\n      \"type\": \"string\",\n      \"avro.java.string\": \"String\",\n      \"doc\": \"NCP notification type\"\n    },\n    {\n      \"name\": \"record_type\",\n      \"type\": {\n        \"name\": \"NOTIFICATION_STATE_TYPE\",\n        \"type\": \"enum\",\n        \"symbols\": [\n          \"processing\",\n          \"terminal\"\n        ]\n      },\n      \"doc\": \"The lifecycle state this record is in\"\n    },\n    {\n      \"name\": \"request_id\",\n      \"type\": \"string\",\n      \"avro.java.string\": \"String\",\n      \"doc\": \"NCP request Id\"\n    },\n    {\n      \"name\": \"short_name\",\n      \"type\": \"string\",\n      \"avro.java.string\": \"String\",\n      \"doc\": \"App team and service name string\"\n    },\n    {\n      \"name\": \"status\",\n      \"type\": {\n        \"name\": \"NOTIFICATION_STATUS_TYPE\",\n        \"type\": \"enum\",\n        \"symbols\": [\n          \"success\",\n          \"failure\"\n        ]\n      },\n      \"doc\": \"The status of this record\"\n    },\n    {\n      \"name\": \"message\",\n      \"type\": \"string\",\n      \"avro.java.string\": \"String\",\n      \"doc\": \"NGAP required failure reason, but should just call it message in case it gets used for non failures in future\"\n    },\n    {\n      \"name\": \"step\",\n      \"type\": \"string\",\n      \"avro.java.string\": \"String\",\n      \"doc\": \"accept_request, gather_data, determine_target, render, transport\"\n    },\n    {\n      \"name\": \"time_taken\",\n      \"type\": \"long\",\n      \"doc\": \"The time in milliseconds that this record took to process within this application\"\n    },\n    {\n      \"name\": \"tag\",\n      \"type\": \"string\",\n      \"avro.java.string\": \"String\",\n      \"doc\": \"\"\n    },\n    {\n      \"name\": \"upmid\",\n      \"type\": \"string\",\n      \"avro.java.string\": \"String\",\n      \"doc\": \"NCP user identifier\"\n    },\n    {\n      \"name\": \"user_notification_id\",\n      \"type\": \"string\",\n      \"avro.java.string\": \"String\",\n      \"doc\": \"NCP user notification identity\"\n    },\n    {\n      \"name\": \"vendor\",\n      \"type\": \"string\",\n      \"avro.java.string\": \"String\",\n      \"doc\": \"NGAP required vendor that this notification is directed to - this is null before determine_target\"\n    },\n    {\n      \"name\": \"version\",\n      \"type\": \"string\",\n      \"avro.java.string\": \"String\",\n      \"doc\": \"CDS version number .e.g. v2\"\n    }\n  ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{hostname}}:8080/subject",
+					"protocol": "http",
+					"host": [
+						"{{hostname}}"
+					],
+					"port": "8080",
+					"path": [
+						"subject"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/subject/{topic}/versions",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "apikey",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "apiSecret",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{hostname}}:8080/subject/myschema/versions",
+					"protocol": "http",
+					"host": [
+						"{{hostname}}"
+					],
+					"port": "8080",
+					"path": [
+						"subject",
+						"myschema",
+						"versions"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/subject/versions/{id}",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "apikey",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "apiSecret",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{hostname}}:8080/subject/version/1",
+					"protocol": "http",
+					"host": [
+						"{{hostname}}"
+					],
+					"port": "8080",
+					"path": [
+						"subject",
+						"version",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/subject/{topic}",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "apikey",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "apiSecret",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"type\": \"record\",\n  \"namespace\": \"com.chrislomeli.kafka.common.schema\",\n  \"name\": \"TestCheese\",\n  \"fields\": [\n    {\n      \"name\": \"send_id\",\n      \"type\": \"string\",\n      \"avro.java.string\": \"String\",\n      \"doc\": \"NGAP required unique id for this request, this user, and this channel (concat request_id + user_notification_id)\"\n    },\n    {\n      \"name\": \"start_time\",\n      \"type\": {\n        \"type\": \"long\",\n        \"logicalType\": \"timestamp-millis\"\n      },\n      \"doc\": \"UTC time in milliseconds when this service began processing this record\"\n    },\n    {\n      \"name\": \"end_time\",\n      \"type\": {\n        \"type\": \"long\",\n        \"logicalType\": \"timestamp-millis\"\n      },\n      \"doc\": \"The time in UTC millseconds when this service existed\"\n    },\n    {\n      \"name\": \"received_time\",\n      \"type\": {\n        \"type\": \"long\",\n        \"logicalType\": \"timestamp-millis\"\n      },\n      \"doc\": \"UTC time in milliseconds that this service received this request\"\n    },\n    {\n      \"name\": \"publish_time\",\n      \"type\": {\n        \"type\": \"long\",\n        \"logicalType\": \"timestamp-millis\"\n      },\n      \"doc\": \"UTC time in milliseconds that this service published its output\"\n    },\n    {\n      \"name\": \"api_version\",\n      \"type\": \"string\",\n      \"avro.java.string\": \"String\",\n      \"doc\": \"CDS API version number\"\n    },\n    {\n      \"name\": \"app\",\n      \"type\": \"string\",\n      \"avro.java.string\": \"String\",\n      \"doc\": \"The service creating this record\"\n    },\n    {\n      \"name\": \"application\",\n      \"type\": \"string\",\n      \"avro.java.string\": \"String\",\n      \"doc\": \"The service creating this record\"\n    },\n    {\n      \"name\": \"appteam\",\n      \"type\": \"string\",\n      \"avro.java.string\": \"String\",\n      \"doc\": \"The NCP team - always Notifications:CDS\"\n    },\n    {\n      \"name\": \"awshost\",\n      \"type\": \"string\",\n      \"avro.java.string\": \"String\",\n      \"doc\": \"The host where the service was running\"\n    },\n    {\n      \"name\": \"comm_id\",\n      \"type\": \"string\",\n      \"avro.java.string\": \"String\",\n      \"doc\": \"NCP com_id\"\n    },\n    {\n      \"name\": \"cp_code\",\n      \"type\": \"string\",\n      \"avro.java.string\": \"String\",\n      \"doc\": \"NCP cp_code\"\n    },\n    {\n      \"name\": \"delivery_channel\",\n      \"type\": \"string\",\n      \"avro.java.string\": \"String\",\n      \"doc\": \"EMAIL,PUSH,SMS,INBOX\"\n    },\n    {\n      \"name\": \"destination\",\n      \"type\": \"string\",\n      \"avro.java.string\": \"String\",\n      \"doc\": \"NGAP required destination is null before transporter and the phone or email or wechatid - depending on the channel\"\n    },\n    {\n      \"name\": \"environment\",\n      \"type\": \"string\",\n      \"avro.java.string\": \"String\",\n      \"doc\": \"The environment .e.g perf, prod, etc\"\n    },\n    {\n      \"name\": \"eventtype\",\n      \"type\": \"string\",\n      \"avro.java.string\": \"String\",\n      \"doc\": \"Descriptive event class\"\n    },\n    {\n      \"name\": \"locale_country\",\n      \"type\": \"string\",\n      \"avro.java.string\": \"String\",\n      \"doc\": \"Locale e.g. US, UK...\"\n    },\n    {\n      \"name\": \"locale_language\",\n      \"type\": \"string\",\n      \"avro.java.string\": \"String\",\n      \"doc\": \"Language e.g. en, fr, ja...\"\n    },\n    {\n      \"name\": \"metric\",\n      \"type\": \"int\",\n      \"doc\": \"TBD\"\n    },\n    {\n      \"name\": \"notification_type\",\n      \"type\": \"string\",\n      \"avro.java.string\": \"String\",\n      \"doc\": \"NCP notification type\"\n    },\n    {\n      \"name\": \"record_type\",\n      \"type\": {\n        \"name\": \"NOTIFICATION_STATE_TYPE\",\n        \"type\": \"enum\",\n        \"symbols\": [\n          \"processing\",\n          \"terminal\"\n        ]\n      },\n      \"doc\": \"The lifecycle state this record is in\"\n    },\n    {\n      \"name\": \"request_id\",\n      \"type\": \"string\",\n      \"avro.java.string\": \"String\",\n      \"doc\": \"NCP request Id\"\n    },\n    {\n      \"name\": \"short_name\",\n      \"type\": \"string\",\n      \"avro.java.string\": \"String\",\n      \"doc\": \"App team and service name string\"\n    },\n    {\n      \"name\": \"status\",\n      \"type\": {\n        \"name\": \"NOTIFICATION_STATUS_TYPE\",\n        \"type\": \"enum\",\n        \"symbols\": [\n          \"success\",\n          \"failure\"\n        ]\n      },\n      \"doc\": \"The status of this record\"\n    },\n    {\n      \"name\": \"message\",\n      \"type\": \"string\",\n      \"avro.java.string\": \"String\",\n      \"doc\": \"NGAP required failure reason, but should just call it message in case it gets used for non failures in future\"\n    },\n    {\n      \"name\": \"step\",\n      \"type\": \"string\",\n      \"avro.java.string\": \"String\",\n      \"doc\": \"accept_request, gather_data, determine_target, render, transport\"\n    },\n    {\n      \"name\": \"time_taken\",\n      \"type\": \"long\",\n      \"doc\": \"The time in milliseconds that this record took to process within this application\"\n    },\n    {\n      \"name\": \"tag\",\n      \"type\": \"string\",\n      \"avro.java.string\": \"String\",\n      \"doc\": \"\"\n    },\n    {\n      \"name\": \"upmid\",\n      \"type\": \"string\",\n      \"avro.java.string\": \"String\",\n      \"doc\": \"NCP user identifier\"\n    },\n    {\n      \"name\": \"user_notification_id\",\n      \"type\": \"string\",\n      \"avro.java.string\": \"String\",\n      \"doc\": \"NCP user notification identity\"\n    },\n    {\n      \"name\": \"vendor\",\n      \"type\": \"string\",\n      \"avro.java.string\": \"String\",\n      \"doc\": \"NGAP required vendor that this notification is directed to - this is null before determine_target\"\n    },\n    {\n      \"name\": \"version\",\n      \"type\": \"string\",\n      \"avro.java.string\": \"String\",\n      \"doc\": \"CDS version number .e.g. v2\"\n    }\n  ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{hostname}}:8080/subject/new-schema",
+					"protocol": "http",
+					"host": [
+						"{{hostname}}"
+					],
+					"port": "8080",
+					"path": [
+						"subject",
+						"new-schema"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/schema/{topic}",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "apikey",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "apiSecret",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{hostname}}:8080/schema/notification_status",
+					"protocol": "http",
+					"host": [
+						"{{hostname}}"
+					],
+					"port": "8080",
+					"path": [
+						"schema",
+						"notification_status"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/schema/{topic}",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "apikey",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "apiSecret",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"type\": \"record\",\n  \"namespace\": \"com.chrislomeli.kafka.common.schema\",\n  \"name\": \"MySchema\",\n  \"fields\": [\n    {\n      \"name\": \"user_name\",\n      \"type\": \"string\",\n      \"avro.java.string\": \"String\",\n      \"doc\": \"example user name\"\n    },\n     {\n      \"name\": \"address\",\n      \"type\": \"string\",\n      \"avro.java.string\": \"String\",\n      \"doc\": \"example user address\"\n    },\n     {\n      \"name\": \"age\",\n      \"type\": \"int\",\n      \"doc\": \"example user age\"\n    },   {\n      \"name\": \"birth_date\",\n      \"type\": {\n        \"type\": \"long\",\n        \"logicalType\": \"timestamp-millis\"\n      },\n      \"doc\": \"Date and time of birth\"\n    }\n\n  ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{hostname}}:8080/schema/new-schema",
+					"protocol": "http",
+					"host": [
+						"{{hostname}}"
+					],
+					"port": "8080",
+					"path": [
+						"schema",
+						"new-schema"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/schema/{topic}/validate",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "apikey",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "apiSecret",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"type\": \"record\",\n    \"name\": \"NotificationStatus\",\n    \"namespace\": \"com.chrislomeli.kafka.common.schema\",\n    \"fields\": [\n        {\n            \"name\": \"send_id\",\n            \"type\": \"string\",\n            \"doc\": \"NGAP required unique id for this request, this user, and this channel (concat request_id + user_notification_id)\",\n            \"avro.java.string\": \"String\"\n        },\n        {\n            \"name\": \"start_time\",\n            \"type\": {\n                \"type\": \"long\",\n                \"logicalType\": \"timestamp-millis\"\n            },\n            \"doc\": \"UTC time in milliseconds when this service began processing this record\"\n        },\n        {\n            \"name\": \"end_time\",\n            \"type\": {\n                \"type\": \"long\",\n                \"logicalType\": \"timestamp-millis\"\n            },\n            \"doc\": \"The time in UTC millseconds when this service existed\"\n        },\n        {\n            \"name\": \"received_time\",\n            \"type\": {\n                \"type\": \"long\",\n                \"logicalType\": \"timestamp-millis\"\n            },\n            \"doc\": \"UTC time in milliseconds that this service received this request\"\n        },\n        {\n            \"name\": \"publish_time\",\n            \"type\": {\n                \"type\": \"long\",\n                \"logicalType\": \"timestamp-millis\"\n            },\n            \"doc\": \"UTC time in milliseconds that this service published its output\"\n        },\n        {\n            \"name\": \"api_version\",\n            \"type\": \"string\",\n            \"doc\": \"CDS API version number\",\n            \"avro.java.string\": \"String\"\n        },\n        {\n            \"name\": \"app\",\n            \"type\": \"string\",\n            \"doc\": \"The service creating this record\",\n            \"avro.java.string\": \"String\"\n        },\n        {\n            \"name\": \"application\",\n            \"type\": \"string\",\n            \"doc\": \"The service creating this record\",\n            \"avro.java.string\": \"String\"\n        },\n        {\n            \"name\": \"appteam\",\n            \"type\": \"string\",\n            \"doc\": \"The NCP team - always Notifications:CDS\",\n            \"avro.java.string\": \"String\"\n        },\n        {\n            \"name\": \"awshost\",\n            \"type\": \"string\",\n            \"doc\": \"The host where the service was running\",\n            \"avro.java.string\": \"String\"\n        },\n        {\n            \"name\": \"comm_id\",\n            \"type\": \"string\",\n            \"doc\": \"NCP com_id\",\n            \"avro.java.string\": \"String\"\n        },\n        {\n            \"name\": \"cp_code\",\n            \"type\": \"string\",\n            \"doc\": \"NCP cp_code\",\n            \"avro.java.string\": \"String\"\n        },\n        {\n            \"name\": \"delivery_channel\",\n            \"type\": \"string\",\n            \"doc\": \"EMAIL,PUSH,SMS,INBOX\",\n            \"avro.java.string\": \"String\"\n        },\n        {\n            \"name\": \"destination\",\n            \"type\": \"string\",\n            \"doc\": \"NGAP required destination is null before transporter and the phone or email or wechatid - depending on the channel\",\n            \"avro.java.string\": \"String\"\n        },\n        {\n            \"name\": \"environment\",\n            \"type\": \"string\",\n            \"doc\": \"The environment .e.g perf, prod, etc\",\n            \"avro.java.string\": \"String\"\n        },\n        {\n            \"name\": \"eventtype\",\n            \"type\": \"string\",\n            \"doc\": \"Descriptive event class\",\n            \"avro.java.string\": \"String\"\n        },\n        {\n            \"name\": \"locale_country\",\n            \"type\": \"string\",\n            \"doc\": \"Locale e.g. US, UK...\",\n            \"avro.java.string\": \"String\"\n        },\n        {\n            \"name\": \"locale_language\",\n            \"type\": \"string\",\n            \"doc\": \"Language e.g. en, fr, ja...\",\n            \"avro.java.string\": \"String\"\n        },\n        {\n            \"name\": \"metric\",\n            \"type\": \"int\",\n            \"doc\": \"TBD\"\n        },\n        {\n            \"name\": \"notification_type\",\n            \"type\": \"string\",\n            \"doc\": \"NCP notification type\",\n            \"avro.java.string\": \"String\"\n        },\n        {\n            \"name\": \"record_type\",\n            \"type\": {\n                \"type\": \"enum\",\n                \"name\": \"NOTIFICATION_STATE_TYPE\",\n                \"symbols\": [\n                    \"processing\",\n                    \"terminal\"\n                ]\n            },\n            \"doc\": \"The lifecycle state this record is in\"\n        },\n        {\n            \"name\": \"request_id\",\n            \"type\": \"string\",\n            \"doc\": \"NCP request Id\",\n            \"avro.java.string\": \"String\"\n        },\n        {\n            \"name\": \"short_name\",\n            \"type\": \"string\",\n            \"doc\": \"App team and service name string\",\n            \"avro.java.string\": \"String\"\n        },\n        {\n            \"name\": \"status\",\n            \"type\": {\n                \"type\": \"enum\",\n                \"name\": \"NOTIFICATION_STATUS_TYPE\",\n                \"symbols\": [\n                    \"success\",\n                    \"failure\"\n                ]\n            },\n            \"doc\": \"The status of this record\"\n        },\n        {\n            \"name\": \"message\",\n            \"type\": \"string\",\n            \"doc\": \"NGAP required failure reason, but should just call it message in case it gets used for non failures in future\",\n            \"avro.java.string\": \"String\"\n        },\n        {\n            \"name\": \"step\",\n            \"type\": \"string\",\n            \"doc\": \"accept_request, gather_data, determine_target, render, transport\",\n            \"avro.java.string\": \"String\"\n        },\n        {\n            \"name\": \"time_taken\",\n            \"type\": \"long\",\n            \"doc\": \"The time in milliseconds that this record took to process within this application\"\n        },\n        {\n            \"name\": \"tag\",\n            \"type\": \"string\",\n            \"doc\": \"\",\n            \"avro.java.string\": \"String\"\n        },\n        {\n            \"name\": \"upmid\",\n            \"type\": \"string\",\n            \"doc\": \"NCP user identifier\",\n            \"avro.java.string\": \"String\"\n        },\n        {\n            \"name\": \"user_notification_id\",\n            \"type\": \"string\",\n            \"doc\": \"NCP user notification identity\",\n            \"avro.java.string\": \"String\"\n        },\n        {\n            \"name\": \"vendor\",\n            \"type\": \"string\",\n            \"doc\": \"NGAP required vendor that this notification is directed to - this is null before determine_target\",\n            \"avro.java.string\": \"String\"\n        },\n        {\n            \"name\": \"version\",\n            \"type\": \"string\",\n            \"doc\": \"CDS version number .e.g. v2\",\n            \"avro.java.string\": \"String\"\n        }\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{hostname}}:8080/schema/notification_status/validate",
+					"protocol": "http",
+					"host": [
+						"{{hostname}}"
+					],
+					"port": "8080",
+					"path": [
+						"schema",
+						"notification_status",
+						"validate"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://{{hostname}}:8080/schema/{topic}/compare",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "apikey",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "apiSecret",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"type\": \"record\",\n    \"name\": \"NotificationStatus\",\n    \"namespace\": \"com.chrislomeli.kafka.common.schema\",\n    \"fields\": [\n        {\n            \"name\": \"send_id\",\n            \"type\": \"string\",\n            \"doc\": \"NGAP required unique id for this request, this user, and this channel (concat request_id + user_notification_id)\",\n            \"avro.java.string\": \"String\"\n        },\n        {\n            \"name\": \"start_time\",\n            \"type\": {\n                \"type\": \"long\",\n                \"logicalType\": \"timestamp-millis\"\n            },\n            \"doc\": \"UTC time in milliseconds when this service began processing this record\"\n        },\n        {\n            \"name\": \"end_time\",\n            \"type\": {\n                \"type\": \"long\",\n                \"logicalType\": \"timestamp-millis\"\n            },\n            \"doc\": \"The time in UTC millseconds when this service existed\"\n        },\n        {\n            \"name\": \"received_time\",\n            \"type\": {\n                \"type\": \"long\",\n                \"logicalType\": \"timestamp-millis\"\n            },\n            \"doc\": \"UTC time in milliseconds that this service received this request\"\n        },\n        {\n            \"name\": \"publish_time\",\n            \"type\": {\n                \"type\": \"long\",\n                \"logicalType\": \"timestamp-millis\"\n            },\n            \"doc\": \"UTC time in milliseconds that this service published its output\"\n        },\n        {\n            \"name\": \"api_version\",\n            \"type\": \"string\",\n            \"doc\": \"CDS API version number\",\n            \"avro.java.string\": \"String\"\n        },\n        {\n            \"name\": \"app\",\n            \"type\": \"string\",\n            \"doc\": \"The service creating this record\",\n            \"avro.java.string\": \"String\"\n        },\n        {\n            \"name\": \"application\",\n            \"type\": \"string\",\n            \"doc\": \"The service creating this record\",\n            \"avro.java.string\": \"String\"\n        },\n        {\n            \"name\": \"appteam\",\n            \"type\": \"string\",\n            \"doc\": \"The NCP team - always Notifications:CDS\",\n            \"avro.java.string\": \"String\"\n        },\n        {\n            \"name\": \"awshost\",\n            \"type\": \"string\",\n            \"doc\": \"The host where the service was running\",\n            \"avro.java.string\": \"String\"\n        },\n        {\n            \"name\": \"comm_id\",\n            \"type\": \"string\",\n            \"doc\": \"NCP com_id\",\n            \"avro.java.string\": \"String\"\n        },\n        {\n            \"name\": \"cp_code\",\n            \"type\": \"string\",\n            \"doc\": \"NCP cp_code\",\n            \"avro.java.string\": \"String\"\n        },\n        {\n            \"name\": \"delivery_channel\",\n            \"type\": \"string\",\n            \"doc\": \"EMAIL,PUSH,SMS,INBOX\",\n            \"avro.java.string\": \"String\"\n        },\n        {\n            \"name\": \"destination\",\n            \"type\": \"string\",\n            \"doc\": \"NGAP required destination is null before transporter and the phone or email or wechatid - depending on the channel\",\n            \"avro.java.string\": \"String\"\n        },\n        {\n            \"name\": \"environment\",\n            \"type\": \"string\",\n            \"doc\": \"The environment .e.g perf, prod, etc\",\n            \"avro.java.string\": \"String\"\n        },\n        {\n            \"name\": \"eventtype\",\n            \"type\": \"string\",\n            \"doc\": \"Descriptive event class\",\n            \"avro.java.string\": \"String\"\n        },\n        {\n            \"name\": \"locale_country\",\n            \"type\": \"string\",\n            \"doc\": \"Locale e.g. US, UK...\",\n            \"avro.java.string\": \"String\"\n        },\n        {\n            \"name\": \"locale_language\",\n            \"type\": \"string\",\n            \"doc\": \"Language e.g. en, fr, ja...\",\n            \"avro.java.string\": \"String\"\n        },\n        {\n            \"name\": \"metric\",\n            \"type\": \"int\",\n            \"doc\": \"TBD\"\n        },\n        {\n            \"name\": \"notification_type\",\n            \"type\": \"string\",\n            \"doc\": \"NCP notification type\",\n            \"avro.java.string\": \"String\"\n        },\n        {\n            \"name\": \"record_type\",\n            \"type\": {\n                \"type\": \"enum\",\n                \"name\": \"NOTIFICATION_STATE_TYPE\",\n                \"symbols\": [\n                    \"processing\",\n                    \"terminal\"\n                ]\n            },\n            \"doc\": \"The lifecycle state this record is in\"\n        },\n        {\n            \"name\": \"request_id\",\n            \"type\": \"string\",\n            \"doc\": \"NCP request Id\",\n            \"avro.java.string\": \"String\"\n        },\n        {\n            \"name\": \"short_name\",\n            \"type\": \"string\",\n            \"doc\": \"App team and service name string\",\n            \"avro.java.string\": \"String\"\n        },\n        {\n            \"name\": \"status\",\n            \"type\": {\n                \"type\": \"enum\",\n                \"name\": \"NOTIFICATION_STATUS_TYPE\",\n                \"symbols\": [\n                    \"success\",\n                    \"failure\"\n                ]\n            },\n            \"doc\": \"The status of this record\"\n        },\n        {\n            \"name\": \"message\",\n            \"type\": \"string\",\n            \"doc\": \"NGAP required failure reason, but should just call it message in case it gets used for non failures in future\",\n            \"avro.java.string\": \"String\"\n        },\n        {\n            \"name\": \"step\",\n            \"type\": \"string\",\n            \"doc\": \"accept_request, gather_data, determine_target, render, transport\",\n            \"avro.java.string\": \"String\"\n        },\n        {\n            \"name\": \"time_taken\",\n            \"type\": \"long\",\n            \"doc\": \"The time in milliseconds that this record took to process within this application\"\n        },\n        {\n            \"name\": \"tag\",\n            \"type\": \"string\",\n            \"doc\": \"\",\n            \"avro.java.string\": \"String\"\n        },\n        {\n            \"name\": \"upmid\",\n            \"type\": \"string\",\n            \"doc\": \"NCP user identifier\",\n            \"avro.java.string\": \"String\"\n        },\n        {\n            \"name\": \"user_notification_id\",\n            \"type\": \"string\",\n            \"doc\": \"NCP user notification identity\",\n            \"avro.java.string\": \"String\"\n        },\n        {\n            \"name\": \"vendor\",\n            \"type\": \"string\",\n            \"doc\": \"NGAP required vendor that this notification is directed to - this is null before determine_target\",\n            \"avro.java.string\": \"String\"\n        },\n        {\n            \"name\": \"version\",\n            \"type\": \"string\",\n            \"doc\": \"CDS version number .e.g. v2\",\n            \"avro.java.string\": \"String\"\n        }\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{hostname}}:8080/schema/notification_status/compare",
+					"protocol": "http",
+					"host": [
+						"{{hostname}}"
+					],
+					"port": "8080",
+					"path": [
+						"schema",
+						"notification_status",
+						"compare"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/topicTime/invoice/MM-dd-yyyy:HH24:mm:ss",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "apikey",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "apiSecret",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"type\": \"record\",\n  \"namespace\": \"com.chrislomeli.kafka.common.schema\",\n  \"name\": \"TestCheese\",\n  \"fields\": [\n    {\n      \"name\": \"send_id\",\n      \"type\": \"string\",\n      \"avro.java.string\": \"String\",\n      \"doc\": \"NGAP required unique id for this request, this user, and this channel (concat request_id + user_notification_id)\"\n    },\n    {\n      \"name\": \"start_time\",\n      \"type\": {\n        \"type\": \"long\",\n        \"logicalType\": \"timestamp-millis\"\n      },\n      \"doc\": \"UTC time in milliseconds when this service began processing this record\"\n    },\n    {\n      \"name\": \"end_time\",\n      \"type\": {\n        \"type\": \"long\",\n        \"logicalType\": \"timestamp-millis\"\n      },\n      \"doc\": \"The time in UTC millseconds when this service existed\"\n    },\n    {\n      \"name\": \"received_time\",\n      \"type\": {\n        \"type\": \"long\",\n        \"logicalType\": \"timestamp-millis\"\n      },\n      \"doc\": \"UTC time in milliseconds that this service received this request\"\n    },\n    {\n      \"name\": \"publish_time\",\n      \"type\": {\n        \"type\": \"long\",\n        \"logicalType\": \"timestamp-millis\"\n      },\n      \"doc\": \"UTC time in milliseconds that this service published its output\"\n    },\n    {\n      \"name\": \"api_version\",\n      \"type\": \"string\",\n      \"avro.java.string\": \"String\",\n      \"doc\": \"CDS API version number\"\n    },\n    {\n      \"name\": \"app\",\n      \"type\": \"string\",\n      \"avro.java.string\": \"String\",\n      \"doc\": \"The service creating this record\"\n    },\n    {\n      \"name\": \"application\",\n      \"type\": \"string\",\n      \"avro.java.string\": \"String\",\n      \"doc\": \"The service creating this record\"\n    },\n    {\n      \"name\": \"appteam\",\n      \"type\": \"string\",\n      \"avro.java.string\": \"String\",\n      \"doc\": \"The NCP team - always Notifications:CDS\"\n    },\n    {\n      \"name\": \"awshost\",\n      \"type\": \"string\",\n      \"avro.java.string\": \"String\",\n      \"doc\": \"The host where the service was running\"\n    },\n    {\n      \"name\": \"comm_id\",\n      \"type\": \"string\",\n      \"avro.java.string\": \"String\",\n      \"doc\": \"NCP com_id\"\n    },\n    {\n      \"name\": \"cp_code\",\n      \"type\": \"string\",\n      \"avro.java.string\": \"String\",\n      \"doc\": \"NCP cp_code\"\n    },\n    {\n      \"name\": \"delivery_channel\",\n      \"type\": \"string\",\n      \"avro.java.string\": \"String\",\n      \"doc\": \"EMAIL,PUSH,SMS,INBOX\"\n    },\n    {\n      \"name\": \"destination\",\n      \"type\": \"string\",\n      \"avro.java.string\": \"String\",\n      \"doc\": \"NGAP required destination is null before transporter and the phone or email or wechatid - depending on the channel\"\n    },\n    {\n      \"name\": \"environment\",\n      \"type\": \"string\",\n      \"avro.java.string\": \"String\",\n      \"doc\": \"The environment .e.g perf, prod, etc\"\n    },\n    {\n      \"name\": \"eventtype\",\n      \"type\": \"string\",\n      \"avro.java.string\": \"String\",\n      \"doc\": \"Descriptive event class\"\n    },\n    {\n      \"name\": \"locale_country\",\n      \"type\": \"string\",\n      \"avro.java.string\": \"String\",\n      \"doc\": \"Locale e.g. US, UK...\"\n    },\n    {\n      \"name\": \"locale_language\",\n      \"type\": \"string\",\n      \"avro.java.string\": \"String\",\n      \"doc\": \"Language e.g. en, fr, ja...\"\n    },\n    {\n      \"name\": \"metric\",\n      \"type\": \"int\",\n      \"doc\": \"TBD\"\n    },\n    {\n      \"name\": \"notification_type\",\n      \"type\": \"string\",\n      \"avro.java.string\": \"String\",\n      \"doc\": \"NCP notification type\"\n    },\n    {\n      \"name\": \"record_type\",\n      \"type\": {\n        \"name\": \"NOTIFICATION_STATE_TYPE\",\n        \"type\": \"enum\",\n        \"symbols\": [\n          \"processing\",\n          \"terminal\"\n        ]\n      },\n      \"doc\": \"The lifecycle state this record is in\"\n    },\n    {\n      \"name\": \"request_id\",\n      \"type\": \"string\",\n      \"avro.java.string\": \"String\",\n      \"doc\": \"NCP request Id\"\n    },\n    {\n      \"name\": \"short_name\",\n      \"type\": \"string\",\n      \"avro.java.string\": \"String\",\n      \"doc\": \"App team and service name string\"\n    },\n    {\n      \"name\": \"status\",\n      \"type\": {\n        \"name\": \"NOTIFICATION_STATUS_TYPE\",\n        \"type\": \"enum\",\n        \"symbols\": [\n          \"success\",\n          \"failure\"\n        ]\n      },\n      \"doc\": \"The status of this record\"\n    },\n    {\n      \"name\": \"message\",\n      \"type\": \"string\",\n      \"avro.java.string\": \"String\",\n      \"doc\": \"NGAP required failure reason, but should just call it message in case it gets used for non failures in future\"\n    },\n    {\n      \"name\": \"step\",\n      \"type\": \"string\",\n      \"avro.java.string\": \"String\",\n      \"doc\": \"accept_request, gather_data, determine_target, render, transport\"\n    },\n    {\n      \"name\": \"time_taken\",\n      \"type\": \"long\",\n      \"doc\": \"The time in milliseconds that this record took to process within this application\"\n    },\n    {\n      \"name\": \"tag\",\n      \"type\": \"string\",\n      \"avro.java.string\": \"String\",\n      \"doc\": \"\"\n    },\n    {\n      \"name\": \"upmid\",\n      \"type\": \"string\",\n      \"avro.java.string\": \"String\",\n      \"doc\": \"NCP user identifier\"\n    },\n    {\n      \"name\": \"user_notification_id\",\n      \"type\": \"string\",\n      \"avro.java.string\": \"String\",\n      \"doc\": \"NCP user notification identity\"\n    },\n    {\n      \"name\": \"vendor\",\n      \"type\": \"string\",\n      \"avro.java.string\": \"String\",\n      \"doc\": \"NGAP required vendor that this notification is directed to - this is null before determine_target\"\n    },\n    {\n      \"name\": \"version\",\n      \"type\": \"string\",\n      \"avro.java.string\": \"String\",\n      \"doc\": \"CDS version number .e.g. v2\"\n    }\n  ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{hostname}}:8080/topicDate/invoice/08-24-2020:13:08:45",
+					"protocol": "http",
+					"host": [
+						"{{hostname}}"
+					],
+					"port": "8080",
+					"path": [
+						"topicDate",
+						"invoice",
+						"08-24-2020:13:08:45"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/topicTimestamp/invoice/1598048686255",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "apikey",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "apiSecret",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"type\": \"record\",\n  \"namespace\": \"com.chrislomeli.kafka.common.schema\",\n  \"name\": \"TestCheese\",\n  \"fields\": [\n    {\n      \"name\": \"send_id\",\n      \"type\": \"string\",\n      \"avro.java.string\": \"String\",\n      \"doc\": \"NGAP required unique id for this request, this user, and this channel (concat request_id + user_notification_id)\"\n    },\n    {\n      \"name\": \"start_time\",\n      \"type\": {\n        \"type\": \"long\",\n        \"logicalType\": \"timestamp-millis\"\n      },\n      \"doc\": \"UTC time in milliseconds when this service began processing this record\"\n    },\n    {\n      \"name\": \"end_time\",\n      \"type\": {\n        \"type\": \"long\",\n        \"logicalType\": \"timestamp-millis\"\n      },\n      \"doc\": \"The time in UTC millseconds when this service existed\"\n    },\n    {\n      \"name\": \"received_time\",\n      \"type\": {\n        \"type\": \"long\",\n        \"logicalType\": \"timestamp-millis\"\n      },\n      \"doc\": \"UTC time in milliseconds that this service received this request\"\n    },\n    {\n      \"name\": \"publish_time\",\n      \"type\": {\n        \"type\": \"long\",\n        \"logicalType\": \"timestamp-millis\"\n      },\n      \"doc\": \"UTC time in milliseconds that this service published its output\"\n    },\n    {\n      \"name\": \"api_version\",\n      \"type\": \"string\",\n      \"avro.java.string\": \"String\",\n      \"doc\": \"CDS API version number\"\n    },\n    {\n      \"name\": \"app\",\n      \"type\": \"string\",\n      \"avro.java.string\": \"String\",\n      \"doc\": \"The service creating this record\"\n    },\n    {\n      \"name\": \"application\",\n      \"type\": \"string\",\n      \"avro.java.string\": \"String\",\n      \"doc\": \"The service creating this record\"\n    },\n    {\n      \"name\": \"appteam\",\n      \"type\": \"string\",\n      \"avro.java.string\": \"String\",\n      \"doc\": \"The NCP team - always Notifications:CDS\"\n    },\n    {\n      \"name\": \"awshost\",\n      \"type\": \"string\",\n      \"avro.java.string\": \"String\",\n      \"doc\": \"The host where the service was running\"\n    },\n    {\n      \"name\": \"comm_id\",\n      \"type\": \"string\",\n      \"avro.java.string\": \"String\",\n      \"doc\": \"NCP com_id\"\n    },\n    {\n      \"name\": \"cp_code\",\n      \"type\": \"string\",\n      \"avro.java.string\": \"String\",\n      \"doc\": \"NCP cp_code\"\n    },\n    {\n      \"name\": \"delivery_channel\",\n      \"type\": \"string\",\n      \"avro.java.string\": \"String\",\n      \"doc\": \"EMAIL,PUSH,SMS,INBOX\"\n    },\n    {\n      \"name\": \"destination\",\n      \"type\": \"string\",\n      \"avro.java.string\": \"String\",\n      \"doc\": \"NGAP required destination is null before transporter and the phone or email or wechatid - depending on the channel\"\n    },\n    {\n      \"name\": \"environment\",\n      \"type\": \"string\",\n      \"avro.java.string\": \"String\",\n      \"doc\": \"The environment .e.g perf, prod, etc\"\n    },\n    {\n      \"name\": \"eventtype\",\n      \"type\": \"string\",\n      \"avro.java.string\": \"String\",\n      \"doc\": \"Descriptive event class\"\n    },\n    {\n      \"name\": \"locale_country\",\n      \"type\": \"string\",\n      \"avro.java.string\": \"String\",\n      \"doc\": \"Locale e.g. US, UK...\"\n    },\n    {\n      \"name\": \"locale_language\",\n      \"type\": \"string\",\n      \"avro.java.string\": \"String\",\n      \"doc\": \"Language e.g. en, fr, ja...\"\n    },\n    {\n      \"name\": \"metric\",\n      \"type\": \"int\",\n      \"doc\": \"TBD\"\n    },\n    {\n      \"name\": \"notification_type\",\n      \"type\": \"string\",\n      \"avro.java.string\": \"String\",\n      \"doc\": \"NCP notification type\"\n    },\n    {\n      \"name\": \"record_type\",\n      \"type\": {\n        \"name\": \"NOTIFICATION_STATE_TYPE\",\n        \"type\": \"enum\",\n        \"symbols\": [\n          \"processing\",\n          \"terminal\"\n        ]\n      },\n      \"doc\": \"The lifecycle state this record is in\"\n    },\n    {\n      \"name\": \"request_id\",\n      \"type\": \"string\",\n      \"avro.java.string\": \"String\",\n      \"doc\": \"NCP request Id\"\n    },\n    {\n      \"name\": \"short_name\",\n      \"type\": \"string\",\n      \"avro.java.string\": \"String\",\n      \"doc\": \"App team and service name string\"\n    },\n    {\n      \"name\": \"status\",\n      \"type\": {\n        \"name\": \"NOTIFICATION_STATUS_TYPE\",\n        \"type\": \"enum\",\n        \"symbols\": [\n          \"success\",\n          \"failure\"\n        ]\n      },\n      \"doc\": \"The status of this record\"\n    },\n    {\n      \"name\": \"message\",\n      \"type\": \"string\",\n      \"avro.java.string\": \"String\",\n      \"doc\": \"NGAP required failure reason, but should just call it message in case it gets used for non failures in future\"\n    },\n    {\n      \"name\": \"step\",\n      \"type\": \"string\",\n      \"avro.java.string\": \"String\",\n      \"doc\": \"accept_request, gather_data, determine_target, render, transport\"\n    },\n    {\n      \"name\": \"time_taken\",\n      \"type\": \"long\",\n      \"doc\": \"The time in milliseconds that this record took to process within this application\"\n    },\n    {\n      \"name\": \"tag\",\n      \"type\": \"string\",\n      \"avro.java.string\": \"String\",\n      \"doc\": \"\"\n    },\n    {\n      \"name\": \"upmid\",\n      \"type\": \"string\",\n      \"avro.java.string\": \"String\",\n      \"doc\": \"NCP user identifier\"\n    },\n    {\n      \"name\": \"user_notification_id\",\n      \"type\": \"string\",\n      \"avro.java.string\": \"String\",\n      \"doc\": \"NCP user notification identity\"\n    },\n    {\n      \"name\": \"vendor\",\n      \"type\": \"string\",\n      \"avro.java.string\": \"String\",\n      \"doc\": \"NGAP required vendor that this notification is directed to - this is null before determine_target\"\n    },\n    {\n      \"name\": \"version\",\n      \"type\": \"string\",\n      \"avro.java.string\": \"String\",\n      \"doc\": \"CDS version number .e.g. v2\"\n    }\n  ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{hostname}}:8080/topicTimestamp/invoice/1598048686255",
+					"protocol": "http",
+					"host": [
+						"{{hostname}}"
+					],
+					"port": "8080",
+					"path": [
+						"topicTimestamp",
+						"invoice",
+						"1598048686255"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
